@@ -1,0 +1,123 @@
+
+.container{
+    display: contain;
+    background-color: aqua; 
+    margin: auto;
+    text-align: center;
+    height: 40em;
+    width: 87em;
+}
+.containing{
+    /* display container; */
+    margin: auto;
+    height: 40em;
+    width: 80em;
+    background-color: blue;
+
+}
+/* header */
+    .header-bar{
+        display: container;
+        width: 85em;
+        height: 2em;
+        background-color: gray;
+        box-shadow: 5px 5px 5px;
+        border-radius: 5px;
+        
+    }
+    .bar-item a
+    {
+        background-color: gray;
+
+    }
+    .bar-item{
+        
+        margin-top:.33em;
+        margin-left: 7em;
+        display: inline-block;
+    }
+    h1{
+        margin: auto;
+        margin: 1em;
+        text-align: center;
+    }
+    /* end header */
+
+/* ================================== */
+
+     /* "previous orders" */
+        .older-orders-headder h2{
+            background-color: greenyellow;
+            text-align: center;
+        }
+        .older-orders-headder{
+            text-align: center;
+            display: inline-block;
+            width: 30em;
+            height :3em;
+            background-color: greenyellow;
+        }
+        .old-order-content{
+            margin: 0em 1em 1em 1em;
+            display: inline-block;
+            width: 30em;
+            height :30em;
+            background-color: green;
+            overflow: scroll;
+        }
+        .old-order-content form {
+            background-color:green ;
+            text-align: center;
+        }
+        .old-order-content form button{
+            text-align: center;
+            background-color:orange ;
+        }
+        .old-order-content h3{
+            text-align: center;
+            background-color:darkgreen ;
+        }
+        .old-order-content p{
+            background-color:green ;
+        }
+        .order{
+            display: inline-block;
+        }
+        /* end previous orders
+        ===================================== */
+
+        /* user-info */
+
+.user-header{
+        background-color: palevioletred;
+        display: inline-block;
+    }
+
+    .user-header h2{
+        text-align: center;
+        background-color: palevioletred;
+    } 
+
+    .user_update{
+        display: inline-block;
+        margin-top: .25em;
+        display: inline-block;
+        width: 30em;
+        height: 30em;
+        text-align: center;
+        background-color: plum;
+    } 
+    .user_update form{
+        margin: auto;
+        display: inline-block;
+        text-align: center;
+        width: 10em;
+        background-color: plum;
+    } 
+    .user_update form label{
+        margin: auto;
+        display: inline-block;
+        text-align: center;
+        width: 10em;
+        background-color: plum;
+    } 

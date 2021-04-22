@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/profile.css'%}?{% now 'U' %}">
+</head>
+<body>
+    
+    <div class ='container'>
+        <div class='header-bar'>
+            <div class='bar-item'> <a href="index">menu</a></div>
+            <div class='bar-item'> <a href="index">contact</a></div>
+            <div class='bar-item'> <a href="index">login</a></div>
+            <div class='bar-item'> <a href="profile">contact</a></div>
+        </div>
+        
+        
+        <h1> Welcome username </h1>
+        <div class='containing'>
+            <div class='old-order-content'>
+                <div class='older-orders-headder'>
+                    <h2>Previous Orders</h2>
+                </div>  
+                <h3>Ordered On Date</h3>
+                <p class="old-order">Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. 
+                    Corporis quas officiis temporibus, 
+                </p>
+                <form action="order" method ='post'> 
+                    <button type="submit">Order Agin</button>
+                </form>
+                <h3>Ordered On Date</h3>
+                <p class="old-order">Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. 
+                    Corporis quas officiis temporibus, 
+                </p>
+                <form action="order" method ='post'> 
+                    <button type="submit">Order Agin</button>
+                </form>
+                <h3>Ordered On Date</h3>
+                <p class="old-order">Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. 
+                    Corporis quas officiis temporibus, 
+                </p>
+                <form action="order" method ='post'> 
+                    <button type="submit">Order Agin</button>
+                </form>
+                <h3>Ordered On Date</h3>
+                <p class="old-order">Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. 
+                    Corporis quas officiis temporibus, 
+                </p>
+                <form action="order" method ='post'> 
+                    <button type="submit">Order Agin</button>
+                </form>
+            </div>
+            
+            <div class='user-header'>
+                <h2>welcome "users name"</h2>
+                <div class='user_update'>
+                    <form action="update">
+                        <label for="first_name">First Name</label>
+                        <input type="text" name='first_name'id='first_name' placeholder="First Name">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" name='last_name'id='last_name' placeholder="Last Name">
+                        <label for="email">Email</label>
+                        <input type="text" name='email'id='email' placeholder="Email">
+                        <label for="Phone_number">Phone Number</label>
+                        <input type="text" name='Phone_number'id='Phone_number' placeholder="Phone">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
