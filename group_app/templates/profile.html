@@ -14,7 +14,7 @@
     <div class='header-bar'>
         <div class='bar-item'> <a href="order">menu</a></div>
         <div class='bar-item'> <a href="contact">contact</a></div>
-        <div class='bar-item'> <a href="index">login</a></div>
+        <div class='bar-item'> <a href="login">login</a></div>
         <div class='bar-item'> <a href="profile">profile</a></div>
     </div>
 
@@ -22,20 +22,22 @@
     <h1> Welcome username </h1>
     <div class='mid-holder'>
         <div class='order-content'>
-            <h2>Previous Orders</h2> 
-            <h3>Ordered On Date</h3>
-            <p class="old-order">
-                Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. 
-                Corporis quas officiis temporibus, 
-            </p>
+            <div class='text-color'>
+                <h2>Previous Orders</h2> 
+                <h3>Ordered On Date</h3>
+                <p class="old-order">
+                    Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. 
+                    Corporis quas officiis temporibus, 
+                </p>
+            </div>
             <form action="order" method ='post'> 
                 <button type="submit">Order Agin</button>
             </form>
         </div>
         <div class='customer'>
             <div class='customer-header'>
-                <h2>Edit Info</h2>
+                <h2 class='edit-header'>Edit Info</h2>
             </div>
             <form class ='edit-user' action="update">
                 <div class='user-info'>

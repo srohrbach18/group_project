@@ -46,10 +46,12 @@
         align-items: top;
         height: 27em;
     }
-
-    .order-content{
-        float:left;
+    .text-color {
         color:#f9c74f;
+    }
+    .order-content {
+        box-shadow: 5px 5px 5px;
+        float:left;
         padding: 1.7em ;
         margin:.5em 3em 3em 3em;
         display:inline-block;
@@ -58,7 +60,7 @@
         background-color:#4E5166;
     }
     .customer{
-        
+        box-shadow: 5px 5px 5px;
         align-items: top;
         display:inline-block;
         background-color: #B9B7A7;
@@ -94,8 +96,9 @@
         text-align: top;
     }
     .contact-info{
+        
         float:right;
-        margin: 3em 3em 3em -4em;
+        margin: 3em 8em 3em -4em;
         box-shadow: 5px 5px 5px;
         padding-bottom: 13.5em;
         align-items:center;
@@ -106,13 +109,16 @@
         text-align: top;  
 
     }
-    .order-btn{
+    /* .order-btn{ */
+    button{
         box-shadow: 5px 5px 5px;
         margin-left: 2em;
+
     }
 
 
     .edit-user{
+        
         padding: 1em;
         display: inline-block;
         margin: auto;
@@ -121,6 +127,7 @@
     }
 
     .user-info{
+    
         float: left;
         /* margin: auto; */
         margin-right: 8em;
@@ -129,6 +136,7 @@
         height: 10em; 
     }
     .card-info{
+        
         float: right;
         /* margin: auto; */
         margin-left: 1em;
@@ -143,6 +151,7 @@
         margin:3px
     }
     .img-t{
+        box-shadow: 5px 5px 5px;
         display: inline-block;
         border-radius: 30px;
         height: 8em;
@@ -150,6 +159,7 @@
         margin-left: 15px;
     }
     .img-m{
+        box-shadow: 5px 5px 5px;
         display: inline-block;
         border-radius: 30px;
         height: 8em;
@@ -158,6 +168,7 @@
 
     }
     .img-b{
+        box-shadow: 5px 5px 5px;
         display: inline-block;
         border-radius: 30px;
         height: 8em;
@@ -168,4 +179,7 @@
     .right-col{
         display: inline-block;
         width: 30em;
+    }
+    .edit-header{
+        text-align: center;
     }
