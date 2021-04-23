@@ -4,12 +4,10 @@ from . models import *
 
 <<<<<<< HEAD
 def index(request):
-
-    return render(request,'index.html')
+    return render (request, "index.html")
 
 def contact (request):
     return render(request,'contact.html')
-
 
 def profile(request):
     
@@ -18,8 +16,4 @@ def profile(request):
 def order(request):
     
     return render(request,'order.html')
-=======
-# Create your views here.
-def index(request):
-    return render (request, "index.html")
->>>>>>> david
+

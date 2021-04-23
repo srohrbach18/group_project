@@ -6,4 +6,5 @@ urlpatterns = [
     path('profile',views.profile),
     path('contact',views.contact),
     path('order',views.order)
+    
 ]
