@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.urls import path
 from . models import *
 
+<<<<<<< HEAD
 def index(request):
 
     return render(request,'index.html')
@@ -17,3 +18,8 @@ def profile(request):
 def order(request):
     
     return render(request,'order.html')
+=======
+# Create your views here.
+def index(request):
+    return render (request, "index.html")
+>>>>>>> david
