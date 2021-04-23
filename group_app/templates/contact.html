@@ -11,14 +11,14 @@
 <body>
     
 
-    <div class ='container'>
-        <div class='header-bar'>
-            <div class='bar-item'> <a href="order">menu</a></div>
-            <div class='bar-item'> <a href="contact">contact</a></div>
-            <div class='bar-item'> <a href="index">login</a></div>
-            <div class='bar-item'> <a href="profile">profile</a></div>
-        </div>
-
+<div class ='container'>
+    <div class='header-bar'>
+        <div class='bar-item'> <a href="order">menu</a></div>
+        <div class='bar-item'> <a href="contact">contact</a></div>
+        <div class='bar-item'> <a href="index">login</a></div>
+        <div class='bar-item'> <a href="profile">profile</a></div>
+    </div>
+    <div class='body'>
         <div id = 'about-us'>
             <h1>About us. </h1>
             <p>We are a small family owned business that has grown due to the overwhelming desire for bacon. 
@@ -27,28 +27,36 @@
                 Are master  charcutier is guaranteed to tame even the most restles of hungers we have posthumously crafted gluten free,
                 vegetarian , low sodium and fat free bacon, Are state of the art kitchen design is guaranteed to deliver a fresh,
                 fast and friendly service of delesus savorey bacon as well so  come in and bring an appetite you're gonna need it!</p>
-        </div>
-        
-        
-        
-        
-        
-        
+            </div>
+            
+            <div class='map'>
+                
+                <iframe height="400" width="400" border="0" marginwidth="0" marginheight="0" 
+                src="https://www.mapquest.com/embed?center=39.510497364451304,-115.9616374969482&zoom=12&maptype=map"></iframe>
+
+            </div>
+
+            <div class='contact-info'>
+                <address>
+                    <h2>Give us a call!</h2> <br>
+                    <h4>Phone:(864)872-2233</h4><br>
+                    <h3>Email:Bacon@yumm.com</h3><br>
+                    <h3>847 S. Bacon Blvd 45732 Eureka , NA</h3><br>
+                </address>
+                <form action="order">
+                    <button class='order-btn' type='submit' name='order-btn'> Order Now</button>
+                    
+                </form>
+            </div>
     </div>
+
+    
+    
+    
+</div>
     
     
     
     
 </body>
-<div class='map'>
-    <h3>My Google Maps Demo</h3>
-    <!--The div element for the map -->
-    <div id="map"></div>
-
-    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-    <script
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
-    async
-    ></script>
-</div>
 </html>

@@ -5,6 +5,6 @@ urlpatterns = [
     path('', views.index),
     path('profile',views.profile),
     path('contact',views.contact),
-    path('order',views.order)
+    # path('order',views.order)
     
 ]

@@ -3,7 +3,6 @@
     display: contain;
     background-color: rgb(214, 214, 214); 
     margin: auto;
-    text-align: center; 
     height: 34em;
     width: 80em;
     
@@ -34,7 +33,7 @@
     .bar-item{
         
         margin-top:.33em;
-        margin-left: 7em;
+        margin-left: 15em;
         display: inline-block;
     }
     h1{
@@ -45,14 +44,17 @@
 
     .mid-holder{
         align-items: top;
+        height: 27em;
     }
 
     .order-content{
+        float:left;
         color:#f9c74f;
-        padding: 4.7em ;
+        padding: 1.7em ;
         margin:.5em 3em 3em 3em;
         display:inline-block;
-        width: 20em;
+        width: 12em;
+        height: 14em;
         background-color:#4E5166;
     }
     .customer{
@@ -60,22 +62,110 @@
         align-items: top;
         display:inline-block;
         background-color: #B9B7A7;
-        height:17em;
-        width: 10em;
+        height:20em;
+        width: 28em;
     }
+
     #btn{
         margin: 1em;
     }
 
     #about-us{
-        width: 20em;
+        text-align: center;
+        height:17em;
+        width: 4em;
+        display: inline-block;
+        width: 18em;
         
     }
     #about-us p{
+        
         margin: 2em;
         
     }
     .map{
+        box-shadow: 2px 2px 2px;
+        margin:3em;
+        display: inline-block;
         height: 20em;
+        width: 25em;
+    }
+    .body{
+        text-align: top;
+    }
+    .contact-info{
+        float:right;
+        margin: 3em 3em 3em -4em;
+        box-shadow: 5px 5px 5px;
+        padding-bottom: 13.5em;
+        align-items:center;
+        background-color:#929487 ;
+        display: inline-block;
+        width: 22em;
+        height: 13em; 
+        text-align: top;  
+
+    }
+    .order-btn{
+        box-shadow: 5px 5px 5px;
+        margin-left: 2em;
+    }
+
+
+    .edit-user{
+        padding: 1em;
+        display: inline-block;
+        margin: auto;
+        width: 21em;
+        height: 13em; 
+    }
+
+    .user-info{
+        float: left;
+        /* margin: auto; */
+        margin-right: 8em;
+        display: inline-block;
+        width: 6em;
+        height: 10em; 
+    }
+    .card-info{
+        float: right;
+        /* margin: auto; */
+        margin-left: 1em;
+        display: inline-block;
+        width: 6em;
+        height: 10em; 
+    }
+    address{
+        padding-left: 2em;
+    }
+    h3,h4 {
+        margin:3px
+    }
+    .img-t{
+        display: inline-block;
+        border-radius: 30px;
+        height: 8em;
+        width: 8em;
+        margin-left: 15px;
+    }
+    .img-m{
+        display: inline-block;
+        border-radius: 30px;
+        height: 8em;
+        width: 8em;
+        margin-left: 2em;
+
+    }
+    .img-b{
+        display: inline-block;
+        border-radius: 30px;
+        height: 8em;
+        width: 8em;
+        margin-left: 7px;
+    }
+
+    .right-col{
+        display: inline-block;
         width: 30em;
     }
