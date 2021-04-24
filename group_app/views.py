@@ -67,18 +67,18 @@ def register(request):
         return redirect('/games')
 
 
-def login(request):
-    errors = User.objects.login_validator(request.POST)
+# def login(request):
+#     errors = User.objects.login_validator(request.POST)
 
-    if len(errors):
-        for key, value in errors.items():
-            messages.error(request, value)
-        return redirect('/')
-    else:
-        user = User.objects.get(email=request.POST['login_email'])
-        request.session['user_id'] = user.id
-        request.session['greeting'] = user.first_name
-        return redirect('/')
+#     if len(errors):
+#         for key, value in errors.items():
+#             messages.error(request, value)
+#         return redirect('/')
+#     else:
+#         user = User.objects.get(email=request.POST['login_email'])
+#         request.session['user_id'] = user.id
+#         request.session['greeting'] = user.first_name
+#         return redirect('/')
 
 
 def order(request):
