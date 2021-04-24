@@ -7,6 +7,8 @@
     width: 80em;
     
 }
+
+
 .containing{
     display: container;
     padding: 3em;
@@ -50,6 +52,7 @@
         color:#f9c74f;
     }
     .order-content {
+        overflow: scroll;
         border-radius: 7px 7px 7px;
         box-shadow: 5px 5px 5px;
         float:left;
@@ -69,8 +72,9 @@
         width: 28em;
     }
 
-    #btn{
-        margin: 1em;
+    .btn{
+        margin-left: 6em;
+        box-shadow: 5px 5px 5px;
     }
 
     #about-us{
@@ -111,7 +115,8 @@
     }
     button{
         box-shadow: 5px 5px 5px;
-        margin-left: 2em;
+
+        margin: 1em 2em 2em 2em;
 
     }
 
@@ -144,10 +149,7 @@
         height: 10em; 
     }
     address{
-        padding-left: 2em;
-    }
-    h3,h4 {
-        margin:3px
+        padding-left: 4em;
     }
     .img-t{
         color:rgb(53, 53, 53);
