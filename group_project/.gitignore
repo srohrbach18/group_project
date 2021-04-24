@@ -1,5 +1,9 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 .env
 
+>>>>>>> david
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
 
@@ -153,3 +157,10 @@ Thumbs.db
 
 
 # End of https://www.toptal.com/developers/gitignore/api/python
+=======
+__pycache__/
+.vscode/
+venv/
+db.sqlite3
+style.css
+>>>>>>> stephan
