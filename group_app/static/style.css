@@ -16,8 +16,9 @@
 .image {
     display: block;
     width: 200px;
-    height: auto;
+    height: 200px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-bottom: 20px;
 }
 
 /* The overlay effect - lays on top of the container and over the image */
