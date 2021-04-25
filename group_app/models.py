@@ -74,3 +74,5 @@ class Billing (models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+
+"git hub is a pain in the a**"
