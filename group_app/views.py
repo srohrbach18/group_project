@@ -33,7 +33,11 @@ def profile(request):
     return render(request,'profile.html')
 
 def index(request):
-    return render(request, 'order.html')
+    return render (request, "index.html")
+
+
+def welcome(request):
+    return render (request, "welcome.html")
 
 def order(request):
     return render(request, 'order.html')
@@ -45,3 +49,4 @@ def checkout(request):
 
 def purchase(request):
     return redirect('/')
+
