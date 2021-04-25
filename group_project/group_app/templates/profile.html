@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/profile.css'%}?{% now 'U' %}">
+</head>
+<body>
+
+<div class ='container'>
+    <div class='header-bar'>
+        <div class='bar-item'> <a href="order">menu</a></div>
+        <div class='bar-item'> <a href="contact">contact</a></div>
+        <div class='bar-item'> <a href="login">login</a></div>
+        <div class='bar-item'> <a href="profile">profile</a></div>
+    </div>
+
+
+    <h1> Welcome username </h1>
+    <div class='mid-holder'>
+        <div class='order-content'>
+            <div class='text-color'>
+                <h2>Previous Orders</h2> 
+                <h3>Ordered On Date</h3>
+                <p class="old-order">
+                    Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. 
+                    Corporis quas officiis temporibus, 
+                </p>
+            </div>
+            <form action="order" method ='post'> 
+                {%csrf_token%}
+                <button type="submit">Order Agin</button>
+            </form>
+            <div class='text-color'>
+                <h2>Previous Orders</h2> 
+                <h3>Ordered On Date</h3>
+                <p class="old-order">
+                    Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. 
+                    Corporis quas officiis temporibus, 
+                </p>
+            </div>
+            <form action="order" method ='post'> 
+                {%csrf_token%}
+                <button type="submit">Order Agin</button>
+            </form>
+        </div>
+        
+        <div class='customer'>
+            <div class='customer-header'>
+                <h2 class='edit-header'>Edit Info</h2>
+            </div>
+
+            <form class ='edit-user' action="edit_user" method=POST>
+                {%csrf_token%}
+                <div class='user-info'>
+                <label for="first_name">First Name</label>
+                <input type="text" name='first_name'id='first_name' placeholder="{{first_name}}">
+
+                <label for="last_name">Last Name</label>
+                <input type="text" name='last_name'id='last_name' placeholder="{{last_name}}">
+
+                <label for="email">Email</label>
+                <input type="text" name='email'id='email' placeholder="{{email}}">
+
+                <label for="Phone_number">Phone Number</label>
+                <input type="text" name='Phone_number'id='Phone_number' placeholder="{{phone}}">
+
+                <button id ='btn' name='edit_user' type="submit">Edit Personal</button>
+                </div>
+            </form>
+            <div class ="edit-card">
+                <form class ='edit-card' action="edit_card" method=POST>
+                    {%csrf_token%}
+                    <label for="card-name">Card Number</label>
+                    <input type="text" name='card_name'id='' placeholder="Card Name">
+
+                    <label for="exp">Exp.</label>
+                    <input type="text" name='exp'id='' placeholder="Exp.">
+
+                    <label for="exp">State</label>
+                    <input type="text" name='satae'id='' placeholder="State">
+                    
+                    <label for="address">address</label>
+                    <input type="text" name='address'id='' placeholder="Address">
+                    
+                    <button id ='btn'name=edit_card type="submit">Edit Card</button>
+                </form>
+            </div>
+        </div>
+        <div class='right-col'>
+                <a href="order"><img class='img-t' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPGX_yaEAarjCr_PIzRiaEVlcZ22EiAF1GgA&usqp=CAU" alt="bacon food"></a>
+                <a href="order"><img class='img-m' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7L-I8i4CTfo2mD2blvdXr6Djbo3p0LlSmPw&usqp=CAU' alt="bacon food"></a>
+                <a href="order"><img class ='img-b' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1qXSWhz_vCCYysH2jaU6m7ulbxtrhTCM4_w&usqp=CAU' alt="bacon food"></a>
+                <a href="order"><img class='img-t' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFYiI6YZzuxvO37X-DOr_HyPh0nUGOL1vyFQ&usqp=CAU" alt="bacon food"></a>
+                <a href="order"><img class='img-m' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWnu2N7W0amW7B0H3-rtg5C4-CnyivczcCYw&usqp=CAU' alt="bacon food"></a>
+                <a href="order"><img class ='img-b' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrsn8ANGI0WmaN3AHUSocNmrc7P2ygOujHXw&usqp=CAU' alt="bacon food"></a>
+                
+            </div>
+    </div>
+</div>
+</body>
+</html>
