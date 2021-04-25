@@ -7,16 +7,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/welcome.css' %}">
+
     <title>Order</title>
 </head>
 <body>
-    <div class="menu">
-      <div class='header-bar'>
+<div class="container">
+    <div class='header-bar'>
         <div class='bar-item'> <a href="order">menu</a></div>
         <div class='bar-item'> <a href="contact">contact</a></div>
         <div class='bar-item'> <a href="login">login</a></div>
         <div class='bar-item'> <a href="profile">profile</a></div>
-      </div>
+    </div>
+    <div class="menu">
         <div class="category">
             <div>
                 <span class="style">Appetizers</span>
@@ -93,7 +96,7 @@
     </div>
     <div class="col-25">
         <div class="container">
-            <h4>Cart
+            <h4>Your Order
                 <span class="price" style="color:black">
                     <i class="fa fa-shopping-cart"></i>
                     <b>4</b>
@@ -107,5 +110,7 @@
             <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
         </div>
     </div>
+
+</div>
 </body>
 </html>
