@@ -64,7 +64,7 @@ def register(request):
         )
         request.session['user_id'] = user.id
         request.session['greeting'] = user.first_name
-        return redirect('/games')
+        return redirect('/')
 
 
 # def login(request):
