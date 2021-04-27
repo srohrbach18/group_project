@@ -8,15 +8,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'css/welcome.css'%}?{% now 'U' %}">
 </head>
 
 <body>
     <div class="container">
 
         <div class='header-bar'>
-            <div class='bar-item'> <a href="menu">menu</a></div>
+            <div class='bar-item'> <a href="order">menu</a></div>
             <div class='bar-item'> <a href="contact">contact</a></div>
             <div class='bar-item'> <a href="login">login</a></div>
             <div class='bar-item'> <a href="profile">profile</a></div>
@@ -65,7 +63,7 @@
                             <input type="password" class="form-control form-control-sm" name="confirm_password">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-outline-success">Register</button>
+                    <button type="submit" class="btn btn-primary">Register</button>
                 </form>
             </div>
             <div class="col-6 px-3">
@@ -86,8 +84,7 @@
                             </ul>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-outline-success">Login</button>
-                    <!-- test github push -->
+                    <button type="submit" class="btn btn-primary">Login</button>
                 </form>
             </div>
         </div>

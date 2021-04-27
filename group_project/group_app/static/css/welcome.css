@@ -1,0 +1,21 @@
+.header-bar{
+    display: container;
+    width: 80em;
+    height: 2em;
+    background-color: gray;
+    box-shadow: 5px 5px 5px;
+    border-radius: 5px;
+    
+}
+.bar-item a
+{
+    background-color: gray;
+    color: purple;
+
+}
+.bar-item{
+    
+    margin-top:.33em;
+    margin-left: 15em;
+    display: inline-block;
+}
