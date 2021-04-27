@@ -87,7 +87,7 @@
     }
     #about-us p{
         
-        margin: 2em;
+        margin: 0em;
         
     }
     .map{
@@ -95,7 +95,7 @@
         margin:3em;
         display: inline-block;
         height: 20em;
-        width: 25em;
+        width: 20em;
     }
     .body{
         text-align: top;

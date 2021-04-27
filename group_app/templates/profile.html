@@ -13,7 +13,7 @@
 <div class ='container'>
     <div class='header-bar'>
         <div class='bar-item'> <a href="add_food">Add Food</a></div>
-        <div class='bar-item'> <a href="order">Menu</a></div>
+        <div class='bar-item'> <a href="menu">Menu</a></div>
         <div class='bar-item'> <a href="contact">Contact</a></div>
         <div class='bar-item'> <a href="login">Login</a></div>
         <div class='bar-item'> <a href="profile">Profile</a></div>
@@ -68,30 +68,10 @@
                 <label for="email">Email</label>
                 <input type="text" name='email'id='email' placeholder="{{email}}">
 
-                <label for="Phone_number">Phone Number</label>
-                <input type="text" name='Phone_number'id='Phone_number' placeholder="{{phone}}">
-
                 <button id ='btn' name='edit_user' type="submit">Edit Personal</button>
                 </div>
             </form>
-            <div class ="edit-card">
-                <form class ='edit-card' action="edit_card" method=POST>
-                    {%csrf_token%}
-                    <label for="card-name">Card Number</label>
-                    <input type="text" name='card_name'id='' placeholder="Card Name">
-
-                    <label for="exp">Exp.</label>
-                    <input type="text" name='exp'id='' placeholder="Exp.">
-
-                    <label for="exp">State</label>
-                    <input type="text" name='satae'id='' placeholder="State">
-                    
-                    <label for="address">address</label>
-                    <input type="text" name='address'id='' placeholder="Address">
-                    
-                    <button id ='btn'name=edit_card type="submit">Edit Card</button>
-                </form>
-            </div>
+        
         </div>
         <div class='right-col'>
                 <a href="order"><img class='img-t' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPGX_yaEAarjCr_PIzRiaEVlcZ22EiAF1GgA&usqp=CAU" alt="bacon food"></a>
