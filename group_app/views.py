@@ -89,5 +89,11 @@ def checkout(request):
 
 def purchase(request):
     return redirect('/')
+    
+def add_food(request):
+
+    return render(request,'add_food.html')
+
+
 
 
