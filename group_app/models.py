@@ -36,7 +36,7 @@ class UserManager(models.Manager):
             if not bcrypt.checkpw(postData['login_password'].encode(), check[0].password.encode()):
                 errors['login_email'] = "Email and password do not match."
         return errors
-
+    
 class User(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
