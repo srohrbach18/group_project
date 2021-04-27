@@ -43,10 +43,6 @@ def index(request):
     return render(request, "index.html")
 
 
-def welcome(request):
-    return render(request, "welcome.html")
-
-
 def register(request):
     errors = User.objects.register_validator(request.POST)
 

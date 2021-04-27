@@ -46,7 +46,14 @@ class User(models.Model):
     updated_at = models.DateField(auto_now=True)
     objects = UserManager()
 
-class Menu (models.Model):
+class Item(models.Model):
+    desc = models.TextField(max_length=100)
+    price = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+class Order(models.Model):
+    item = models.ManyToManyField(Item)
     quantity = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -57,8 +64,6 @@ class Item(models.Model):
     price = models.FloatField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
-
 
 class Pay (models.Model):
     user = models.ForeignKey(User,related_name='pay' ,on_delete=models.CASCADE)
