@@ -26,18 +26,10 @@ def edit_user(request):
     return redirect(profile)
 
 
-def edit_card(request):
-
-    return redirect(profile)
-
-
 def profile(request):
     # (??"need to add id to path"??)
 
     return render(request, 'profile.html')
-
-
-
 
 def index(request):
     return render(request, "index.html")
@@ -59,7 +51,6 @@ def register(request):
                 request.POST['password'].encode(), bcrypt.gensalt()).decode()
         )
         request.session['user_id'] = user.id
-        request.session['greeting'] = user.first_name
         return redirect('/')
 
 
@@ -73,22 +64,13 @@ def register(request):
 #     else:
 #         user = User.objects.get(email=request.POST['login_email'])
 #         request.session['user_id'] = user.id
-#         request.session['greeting'] = user.first_name
 #         return redirect('/')
 
 
-def order(request):
-    return render(request, 'order.html')
+def menu(request):
 
+    return render(request, 'menu.html')
 
-def checkout(request):
-    context = {
-    }
-    return render(request, 'store/checkout.html', context)
-
-
-def purchase(request):
-    return redirect('/')
     
 def add_food(request):
 

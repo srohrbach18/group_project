@@ -47,30 +47,10 @@ class User(models.Model):
     objects = UserManager()
 
 class Item(models.Model):
-    desc = models.TextField(max_length=100)
-    price = models.IntegerField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-class Order(models.Model):
-    item = models.ManyToManyField(Item)
-    quantity = models.IntegerField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-class Item(models.Model):
-    menu = models.ForeignKey(Menu, on_delete=models.CASCADE)
+    course = models.CharField(max_length=45)
+    name = models.CharField(max_length=50)
     desc = models.TextField(max_length=100)
     price = models.FloatField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-class Pay (models.Model):
-    user = models.ForeignKey(User,related_name='pay' ,on_delete=models.CASCADE)
-    card = models.IntegerField()
-    exp = models.IntegerField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-
-"git hub is a pain in the a**"
