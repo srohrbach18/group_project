@@ -8,6 +8,7 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="{% static 'css/welcome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css'%}?{% now 'U' %}">
 
     <title>Order</title>
 </head>
@@ -19,11 +20,17 @@
         <div class='bar-item'> <a href="login">login</a></div>
         <div class='bar-item'> <a href="profile">profile</a></div>
     </div>
+    <div id="menu" class="w3-container w3-black w3-xxlarge w3-padding-64">
+        <h1 class="w3-center w3-jumbo w3-padding-32">THE MENU</h1>
+            <div class="w3-row w3-center w3-border w3-border-dark-grey">
+                <a href="#appetizers"><div class="w3-third w3-padding-large w3-red">Appetizers</div></a>
+                <a href="#entrees"><div class="w3-third w3-padding-large w3-hover-red">Entrees</div></a>
+                <a href="#desserts"><div class="w3-third w3-padding-large w3-hover-red">Dessert</div></a>
+        </div>
     <div class="menu">
         <div class="category">
-            <div>
-                <span class="style">Appetizers</span>
-            </div>
+            <h1 id="Appetizers" class="w3-center w3-jumbo w3-padding-32">Appetizers</h1>
+            <div class="w3-container w3-white w3-padding-32">
             <ul class="list">
                 <li class="food">
                     <img src="https://speedyrecipe.com/wp-content/uploads/2018/02/Bacon-and-Egg-Cups.jpg" alt="plate" class="image">
@@ -48,10 +55,8 @@
                     <div class="overlay"><a href="/add">Bacon Dates - Dates stuffed with mozzerella, wrapped in bacon - 9</a></div>
                 </li>
             </ul>
-
-            <div>
-                <span class="style">Entrees</span>
-            </div>
+            <h1 id="entrees" class="w3-center w3-jumbo w3-padding-32">Entrees</h1>
+            <div class="w3-container w3-white w3-padding-32">
             <ul class="list">
                 <li class="food">
                     <img src="https://whatshouldimakefor.com/wp-content/uploads/2019/07/IMG_8418.jpg" alt="plate" class="image">
@@ -76,10 +81,8 @@
                     <div class="overlay"><a href="/add">Bacon Totchos - tots, mustard-cheese sauce, beef, onion, lettuce - 16</a></div>
                 </li>
             </ul>
-
-            <div>
-                <span class="style">Dessert</span>
-            </div>
+            <h1 id="desserts" class="w3-center w3-jumbo w3-padding-32">Desserts</h1>
+            <div class="w3-container w3-white w3-padding-32">
             <ul class="list">
                 <li class="food">
                     <img src="https://i.pinimg.com/originals/5b/8e/29/5b8e29c9de75aac84528692b86289e33.jpg" alt="plate" class="image">
