@@ -52,7 +52,7 @@ class Item(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-class Menu (models.Model):
+class Order(models.Model):
     item = models.ManyToManyField(Item)
     quantity = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
