@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,17 +7,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{%static 'css/profile.css'%}?{%now 'U'%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
     <title>Order</title>
 </head>
-
 <body>
-    <div class="menu">
+    <div class="container">
         <div class='header-bar'>
             <div class='bar-item'> <a href="menu">menu</a></div>
             <div class='bar-item'> <a href="contact">contact</a></div>
             <div class='bar-item'> <a href="login">login</a></div>
             <div class='bar-item'> <a href="profile">profile</a></div>
         </div>
+        <div id="menu" class="w3-container w3-black w3-xxlarge w3-padding-64">
+            <h1 class="w3-center w3-jumbo w3-padding-32">THE MENU</h1>
+            <div class="w3-row w3-center w3-border w3-border-dark-grey">
+                <a href="#appetizers"><div class="w3-third w3-padding-large w3-red">Appetizers</div></a>
+                <a href="#entrees"><div class="w3-third w3-padding-large w3-hover-red">Entrees</div></a>
+                <a href="#desserts"><div class="w3-third w3-padding-large w3-hover-red">Desserts</div></a>
+            </div>
+        <div id="appetizers" class="w3-container w3-white w3-padding-32">
+            <div class="food">
+                {% for item in this_user.made_items.all }
+                    {% if item.course == "appetizer" %}
+                        <tr>
+                            <h2><td>{{ item.name }} - {{ item.desc }} - ${{ item.price }}</td>{{ item.name }} - {{ item.desc }} - {{ item.price }}</h2>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+        <h1 id="entrees" class="w3-center w3-jumbo w3-padding-32">Entrees</h1>
+        <div class="w3-container w3-white w3-padding-32">
+
+        <h1 id="desserts" class="w3-center w3-jumbo w3-padding-32">Desserts</h1>
+        <div class="w3-container w3-white w3-padding-32">
+    
+
+    </div>
+    <div class="menu">
         <div class="category">
             <div>
                 <span class="style">Appetizers</span>
@@ -108,22 +137,6 @@
                             with sprinkles - 7</a></div>
                 </li>
             </ul>
-        </div>
-    </div>
-    <div class="col-25">
-        <div class="container">
-            <h4>Cart
-                <span class="price" style="color:black">
-                    <i class="fa fa-shopping-cart"></i>
-                    <b>4</b>
-                </span>
-            </h4>
-            <p><a href="#">Product 1</a> <span class="price">$15</span></p>
-            <p><a href="#">Product 2</a> <span class="price">$5</span></p>
-            <p><a href="#">Product 3</a> <span class="price">$8</span></p>
-            <p><a href="#">Product 4</a> <span class="price">$2</span></p>
-            <hr>
-            <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
         </div>
     </div>
 </body>

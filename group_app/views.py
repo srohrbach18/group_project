@@ -65,9 +65,12 @@ def register(request):
 #         return redirect('/')
 
 
-def menu(request):
-
-    return render(request, 'menu.html')
+def menu (request, item_id):
+    context = {
+        'item': Item.objects.get(id=item_id),
+        'this_user': User.objects.get(id=request.session['user_id']),
+    }
+    return render(request, "menu.html", context)
 
     
 def add_food(request):

@@ -51,6 +51,7 @@ class Item(models.Model):
     name = models.CharField(max_length=50)
     desc = models.TextField(max_length=100)
     price = models.FloatField()
+    made_by = models.ManyToManyField(User, related_name="made_items")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
