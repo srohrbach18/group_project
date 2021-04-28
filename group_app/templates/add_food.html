@@ -4,40 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>add food admin</title>
+    <title>Add Food Admin</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/profile.css'%}?{% now 'U' %}">
 </head>
 <body>
-    <div class='header-bar'>
-        <div class='bar-item'> <a href="menu">menu</a></div>
-        <div class='bar-item'> <a href="contact">contact</a></div>
-        <div class='bar-item'> <a href="login">login</a></div>
-        <div class='bar-item'> <a href="profile">profile</a></div>
+    <div class= container>
+        <div class='header-bar'>
+            <div class='bar-item'> <a href="menu">menu</a></div>
+            <div class='bar-item'> <a href="contact">contact</a></div>
+            <div class='bar-item'> <a href="login">login</a></div>
+            <div class='bar-item'> <a href="profile">profile</a></div>
+        </div>
+
+
+        <h1>Add product here</h1>
+
+        <div class=food-form>
+        <form action="handel_add_food" method='post'>
+            {%csrf_token%}
+            <!-- "item" -->
+            <h2 class='add_header' >menu items </h2>
+            <label for="name">name</label>
+            <input type="text" name="name" id="name">
+
+            <label for="desc">Description</label>
+            <input type="text" name="desc" id="desc">
+
+            <label for="price">price</label>
+            <input type="number" name="price" id="price">
+
+            <label for="course">course</label>
+            <select name="course" id="course">
+                <option value="Appetizers">Appetizers</option>
+                <option value="Entrees">Entrees</option>
+                <option value="Desserts">Desserts</option>
+            </select>
+            <button type="submit">Add item </button>
+
+        </form>
+        </div>
+        <div class='food'>
+            <h2>Appetizers</h2>
+            {%for item in items%}
+                {%if item.course == 'Appetizers' %}
+                <li>{{item.name}}</li>
+                {%endif%}
+            {%endfor%}
+        </div>
+        <div class='food'>
+            <h2>Entrees</h2>
+            {%for item in items%}
+                {%if item.course == 'Entrees' %}
+                <li>{{item.name}}</li>
+                {%endif%}
+            {%endfor%}
+        </div>
+
+        <div class='food'>
+        <h2>Desserts</h2>
+        {%for item in items%}
+            {%if item.course == 'Desserts' %}
+            <li>{{item.name}}</li>
+            {%endif%}
+        {%endfor%}
+        </div>
     </div>
 
-
-    <h1>add food here</h1>
-
-    <form action="add_food" method='post'>
-        <!-- "item" -->
-        <h2>menu items </h2>
-        <label for="name">name</label>
-        <input type="text" name="name" id="name">
-
-        <label for="desc">Description</label>
-        <input type="text" name="desc" id="desc">
-
-        <label for="price">price</label>
-        <input type="number" name="price" id="price">
-
-        <label for="course">course</label>
-        <select name="course" id="course">
-            <option value="Appetizers">Appetizers</option>
-            <option value="Entrees">Entrees</option>
-            <option value="Desserts">Desserts</option>
-        </select>
-            <h2>add edit</h2>
-    </form>
-
-    
 </body>
 </html>
