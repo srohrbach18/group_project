@@ -86,12 +86,16 @@ def handle_login(request):
         return redirect('/')
 
 
-def menu (request, item_id):
-    context = {
-        'item': Item.objects.get(id=item_id),
-        'this_user': User.objects.get(id=request.session['user_id']),
-    }
-    return render(request, "menu.html", context)
+def menu (request):
+    if "user_id" not in request.session:
+        return redirect('/')
+    else:
+        items=Item.objects.all()
+        context = {
+            'items': items,
+            'this_user': User.objects.get(id=request.session['user_id']),
+        }
+    return render(request, "menu.html", context) 
 
 def handle_add_food(request):
     errors = Item.objects.item_validator(request.POST)
