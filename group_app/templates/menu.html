@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,124 +7,59 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{%static 'css/profile.css'%}?{%now 'U'%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
     <title>Order</title>
 </head>
-
 <body>
-    <div class="menu">
+    <div class="container">
         <div class='header-bar'>
-            <div class='bar-item'> <a href="menu">menu</a></div>
-            <div class='bar-item'> <a href="contact">contact</a></div>
-            <div class='bar-item'> <a href="login">login</a></div>
-            <div class='bar-item'> <a href="profile">profile</a></div>
+            <div class='bar-item'> <a href="menu">Menu</a></div>
+            <div class='bar-item'> <a href="contact">Contact</a></div>
+            <div class='bar-item'> <a href="login">Login</a></div>
+            <div class='bar-item'> <a href="profile">Profile</a></div>
         </div>
-        <div class="category">
-            <div>
-                <span class="style">Appetizers</span>
+        <div id="menu" class="w3-container w3-black w3-xxlarge w3-padding-64">
+            <h1 class="w3-center w3-jumbo w3-padding-32">THE MENU</h1>
+            <div class="w3-row w3-center w3-border w3-border-dark-grey">
+                <a href="#appetizers"><div class="w3-third w3-padding-large w3-brown">Appetizers</div></a>
+                <a href="#entrees"><div class="w3-third w3-padding-large w3-hover-brown">Entrees</div></a>
+                <a href="#desserts"><div class="w3-third w3-padding-large w3-hover-brown">Desserts</div></a>
             </div>
-            <ul class="list">
-                <li class="food">
-                    <img src="https://speedyrecipe.com/wp-content/uploads/2018/02/Bacon-and-Egg-Cups.jpg" alt="plate"
-                        class="image">
-                    <div class="overlay"><a href="/add">Bacon Egg Cups - Soft boiled eggs with cheddar wrapped with
-                            smokey bacon - 12</a></div>
-                </li>
-            </ul>
-            <ul class="list">
-                <li class="food">
-                    <img src="https://s3-media0.fl.yelpcdn.com/bphoto/XzJQqnaT_Qc_RIm135tAlw/o.jpg" alt="plate"
-                        class="image">
-                    <div class="overlay"><a href="/add">Plate O' Bacon - Candied and smokey - 9</a></div>
-                </li>
-            </ul>
-            <ul class="list">
-                <li class="food">
-                    <img src="https://www.wholesomeyum.com/wp-content/uploads/2016/01/wholesomeyum-crispy-bacon-wrapped-asparagus-3.jpg"
-                        alt="plate" class="image">
-                    <div class="overlay"><a href="/add">Asparagus - Wrapped in our uncurred house bacon - 9</a></div>
-                </li>
-            </ul>
-            <ul class="list">
-                <li class="food">
-                    <img src="https://www.eatwell101.com/wp-content/uploads/2016/11/Cheesy-Bacon-Wrapped-Dates-Recipe.jpg"
-                        alt="plate" class="image">
-                    <div class="overlay"><a href="/add">Bacon Dates - Dates stuffed with mozzerella, wrapped in bacon -
-                            9</a></div>
-                </li>
-            </ul>
-
-            <div>
-                <span class="style">Entrees</span>
+        <div id="appetizers" class="w3-container w3-white w3-padding-32">
+            <div class="food">
+                {% for item in this_user.made_items.all }
+                    {% if item.course == "appetizer" %}
+                        <tr>
+                            <h2><td>{{ item.name }} - {{ item.desc }} - ${{ item.price }}</td></h2>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
             </div>
-            <ul class="list">
-                <li class="food">
-                    <img src="https://whatshouldimakefor.com/wp-content/uploads/2019/07/IMG_8418.jpg" alt="plate"
-                        class="image">
-                    <div class="overlay"><a href="/add">Bacon cheese Burger - American Cheese, mama lils pepper, candied
-                            bacon, secret sauce - 18</a></div>
-                </li>
-            </ul>
-            <ul class="list">
-                <li class="food">
-                    <img src="https://www.countrysidecravings.com/wp-content/uploads/2016/10/One-Pot-Bacon-Alfredo-Picture-3.jpg"
-                        alt="plate" class="image">
-                    <div class="overlay"><a href="/add">Bacon Mac and Cheese - snowy cheddar, herbed bachemel, candied
-                            bacon - 22</a></div>
-                </li>
-            </ul>
-            <ul class="list">
-                <li class="food">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_opgfOaMkn1sXt6mLuPhht8vQoLOCoID_yg&usqp=CAU"
-                        alt="plate" class="image">
-                    <div class="overlay"><a href="/add">Bacon Meatloaf - caramelized onion mashed potatoes,
-                            mushroom-brandy cream sauce - 18</a></div>
-                </li>
-            </ul>
-            <ul class="list">
-                <li class="food">
-                    <img src="https://www.coopercheese.com/wp-content/uploads/2018/10/Cooper_Tatchos_Mobile.jpg"
-                        alt="plate" class="image">
-                    <div class="overlay"><a href="/add">Bacon Totchos - tots, mustard-cheese sauce, beef, onion, lettuce
-                            - 16</a></div>
-                </li>
-            </ul>
-
-            <div>
-                <span class="style">Dessert</span>
+        <h1 id="entrees" class="w3-center w3-jumbo w3-padding-32">Entrees</h1>
+        <div class="w3-container w3-white w3-padding-32">
+            <div class="food">
+                {% for item in this_user.made_items.all }
+                    {% if item.course == "entrees" %}
+                        <tr>
+                            <h2><td>{{ item.name }} - {{ item.desc }} - ${{ item.price }}</td></h2>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
             </div>
-            <ul class="list">
-                <li class="food">
-                    <img src="https://i.pinimg.com/originals/5b/8e/29/5b8e29c9de75aac84528692b86289e33.jpg" alt="plate"
-                        class="image">
-                    <div class="overlay"><a href="/add">Bacon Cannnoli - sweet chocolate, ricotta cheese - 7</a></div>
-                </li>
-            </ul>
-            <ul class="list">
-                <li class="food">
-                    <img src="https://i.pinimg.com/originals/b2/04/b2/b204b2c53a483dc0964edd69fe1d619a.jpg" alt="plate"
-                        class="image">
-                    <div class="overlay"><a href="/add">Chocolate bacon - smokey bacon dipped in sweet chocolate covered
-                            with sprinkles - 7</a></div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="col-25">
-        <div class="container">
-            <h4>Cart
-                <span class="price" style="color:black">
-                    <i class="fa fa-shopping-cart"></i>
-                    <b>4</b>
-                </span>
-            </h4>
-            <p><a href="#">Product 1</a> <span class="price">$15</span></p>
-            <p><a href="#">Product 2</a> <span class="price">$5</span></p>
-            <p><a href="#">Product 3</a> <span class="price">$8</span></p>
-            <p><a href="#">Product 4</a> <span class="price">$2</span></p>
-            <hr>
-            <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
-        </div>
+        <h1 id="desserts" class="w3-center w3-jumbo w3-padding-32">Desserts</h1>
+        <div class="w3-container w3-white w3-padding-32">
+            <div class="food">
+                {% for item in this_user.made_items.all }
+                    {% if item.course == "desserts" %}
+                        <tr>
+                            <h2><td>{{ item.name }} - {{ item.desc }} - ${{ item.price }}</td></h2>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </div>
     </div>
 </body>
-
 </html>

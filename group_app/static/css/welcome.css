@@ -41,6 +41,7 @@ h1 {
     display: inline-block;
 }
 
+
 footer {
     color:blue;
     display: flex;
@@ -57,3 +58,9 @@ footer {
 
     
 } */
+
+/* .img{
+    width: 800px;
+    height: auto;
+}  */
+

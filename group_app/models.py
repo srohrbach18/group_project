@@ -46,11 +46,33 @@ class User(models.Model):
     updated_at = models.DateField(auto_now=True)
     objects = UserManager()
 
+class ItemManager(models.Manager):
+    def item_validator(self, postData):
+        errors = {}
+        n_exists = item.objects.filter(name=postData['name'])
+        d_exists = item.objects.filter(desc=postData['desc'])
+        
+
+        if len(postData['name']) <= 0:
+            errors['name'] = "please add a name"
+        if len(postData['desc']) <= 0:
+            errors['desc'] = "please add a description."
+        if len(postData['price']) <= 0:
+            errors['password'] = "please add a price."
+        elif postData['course'] <= 0:
+            errors['password'] = "Please select a course."
+        elif n_check:
+            errors['name'] = "this name already exists." 
+        elif d_check:
+            errors['desc'] = "this description already exists."
+        return errors
+
 class Item(models.Model):
     course = models.CharField(max_length=45)
     name = models.CharField(max_length=50)
     desc = models.TextField(max_length=100)
     price = models.FloatField()
+    made_by = models.ManyToManyField(User, related_name="made_items")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

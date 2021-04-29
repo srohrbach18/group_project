@@ -19,36 +19,29 @@
         <div class='bar-item'> <a href="profile">Profile</a></div>
     </div>
 
+    {% for message in messages %}
+        <p class="text-danger small">{{ message }}</p>
+        {% endfor %}
 
-    <h1> Welcome username </h1>
+    <h1 class='title'> Welcome {{first_name}} {{last_name}} </h1>
     <div class='mid-holder'>
         <div class='order-content'>
             <div class='text-color'>
                 <h2>Previous Orders</h2> 
-                <h3>Ordered On Date</h3>
+                {%for item in items%}
+                <h4>Added On:{{item.created_at}}</h4>
+                <p>Item: {{item.name}}</p>
                 <p class="old-order">
-                    Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. 
-                    Corporis quas officiis temporibus, 
+                <p>Description: {{item.desc}}</p>
+                <p>Price: {{item.price}}</p>
+                <p>Course: {{item.course}}</p>
                 </p>
+                <form action="edit_item/{{item.id}}" method ='post'> 
+                    {%csrf_token%}
+                    <button type="submit">Edit Order</button>
+                </form>
+                {%endfor%}
             </div>
-            <form action="order" method ='post'> 
-                {%csrf_token%}
-                <button type="submit">Order Agin</button>
-            </form>
-            <div class='text-color'>
-                <h2>Previous Orders</h2> 
-                <h3>Ordered On Date</h3>
-                <p class="old-order">
-                    Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. 
-                    Corporis quas officiis temporibus, 
-                </p>
-            </div>
-            <form action="order" method ='post'> 
-                {%csrf_token%}
-                <button type="submit">Order Agin</button>
-            </form>
         </div>
         
         <div class='customer'>
@@ -74,12 +67,12 @@
         
         </div>
         <div class='right-col'>
-                <a href="order"><img class='img-t' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPGX_yaEAarjCr_PIzRiaEVlcZ22EiAF1GgA&usqp=CAU" alt="bacon food"></a>
-                <a href="order"><img class='img-m' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7L-I8i4CTfo2mD2blvdXr6Djbo3p0LlSmPw&usqp=CAU' alt="bacon food"></a>
-                <a href="order"><img class ='img-b' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1qXSWhz_vCCYysH2jaU6m7ulbxtrhTCM4_w&usqp=CAU' alt="bacon food"></a>
-                <a href="order"><img class='img-t' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFYiI6YZzuxvO37X-DOr_HyPh0nUGOL1vyFQ&usqp=CAU" alt="bacon food"></a>
-                <a href="order"><img class='img-m' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWnu2N7W0amW7B0H3-rtg5C4-CnyivczcCYw&usqp=CAU' alt="bacon food"></a>
-                <a href="order"><img class ='img-b' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrsn8ANGI0WmaN3AHUSocNmrc7P2ygOujHXw&usqp=CAU' alt="bacon food"></a>
+                <a href="menu"><img class='img-t' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPGX_yaEAarjCr_PIzRiaEVlcZ22EiAF1GgA&usqp=CAU" alt="bacon food"></a>
+                <a href="menu"><img class='img-m' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7L-I8i4CTfo2mD2blvdXr6Djbo3p0LlSmPw&usqp=CAU' alt="bacon food"></a>
+                <a href="menu"><img class ='img-b' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1qXSWhz_vCCYysH2jaU6m7ulbxtrhTCM4_w&usqp=CAU' alt="bacon food"></a>
+                <a href="menu"><img class='img-t' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFYiI6YZzuxvO37X-DOr_HyPh0nUGOL1vyFQ&usqp=CAU" alt="bacon food"></a>
+                <a href="menu"><img class='img-m' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWnu2N7W0amW7B0H3-rtg5C4-CnyivczcCYw&usqp=CAU' alt="bacon food"></a>
+                <a href="menu"><img class ='img-b' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrsn8ANGI0WmaN3AHUSocNmrc7P2ygOujHXw&usqp=CAU' alt="bacon food"></a>
                 
             </div>
     </div>
