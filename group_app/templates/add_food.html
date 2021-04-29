@@ -11,65 +11,67 @@
 <body>
     <div class= container>
         <div class='header-bar'>
-            <div class='bar-item'> <a href="menu">menu</a></div>
-            <div class='bar-item'> <a href="contact">contact</a></div>
-            <div class='bar-item'> <a href="login">login</a></div>
-            <div class='bar-item'> <a href="profile">profile</a></div>
+            <div class='bar-item'> <a href="menu">Menu</a></div>
+            <div class='bar-item'> <a href="contact">Contact</a></div>
+            <div class='bar-item'> <a href="login">Login</a></div>
+            <div class='bar-item'> <a href="profile">Profile</a></div>
         </div>
 
 
-        <h1>Add product here</h1>
+        <h1>Add Item </h1>
 
         <div class=food-form>
-        <form action="handel_add_food" method='post'>
+        <form action="handle_add_food" class = 'add-form' method='post'>
             {%csrf_token%}
-            <!-- "item" -->
-            <h2 class='add_header' >menu items </h2>
-            <label for="name">name</label>
+            
+            <h2 class='add-header' >Menu items </h2>
+            <label for="name">Name :</label>
             <input type="text" name="name" id="name">
 
-            <label for="desc">Description</label>
+            <label for="desc">Description :</label>
             <input type="text" name="desc" id="desc">
 
-            <label for="price">price</label>
+            <label for="price">Price :</label>
             <input type="number" name="price" id="price">
 
-            <label for="course">course</label>
+            <label for="course">Course :</label>
             <select name="course" id="course">
                 <option value="Appetizers">Appetizers</option>
                 <option value="Entrees">Entrees</option>
                 <option value="Desserts">Desserts</option>
             </select>
-            <button type="submit">Add item </button>
+            <button type="submit">Add Item </button>
 
         </form>
-        </div>
+    </div>
+    <div class=food-box>
         <div class='food'>
             <h2>Appetizers</h2>
             {%for item in items%}
-                {%if item.course == 'Appetizers' %}
-                <li>{{item.name}}</li>
-                {%endif%}
+            {%if item.course == 'Appetizers' %}
+            <a href='edit_item/{{item.id}}'><li>{{item.name}}</li></a>
+            {%endif%}
             {%endfor%}
         </div>
         <div class='food'>
             <h2>Entrees</h2>
             {%for item in items%}
-                {%if item.course == 'Entrees' %}
-                <li>{{item.name}}</li>
-                {%endif%}
+            {%if item.course == 'Entrees' %}
+            <a href='edit_item/{{item.id}}'><li>{{item.name}}</li></a>
+            {%endif%}
             {%endfor%}
         </div>
-
+        
         <div class='food'>
-        <h2>Desserts</h2>
-        {%for item in items%}
+            <h2>Desserts</h2>
+            {%for item in items%}
             {%if item.course == 'Desserts' %}
-            <li>{{item.name}}</li>
+            <a href='edit_item/{{item.id}}'><li>{{item.name}}</li></a>
             {%endif%}
-        {%endfor%}
+            {%endfor%}
         </div>
     </div>
-
+</div>
+    
 </body>
 </html>

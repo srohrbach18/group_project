@@ -20,35 +20,25 @@
     </div>
 
 
-    <h1> Welcome username </h1>
+    <h1 class='title'> Welcome {{first_name}} {{last_name}} </h1>
     <div class='mid-holder'>
         <div class='order-content'>
             <div class='text-color'>
                 <h2>Previous Orders</h2> 
-                <h3>Ordered On Date</h3>
+                {%for item in items%}
+                <h4>Added On:{{item.created_at}}</h4>
+                <p>Item: {{item.name}}</p>
                 <p class="old-order">
-                    Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. 
-                    Corporis quas officiis temporibus, 
+                <p>Description: {{item.desc}}</p>
+                <p>Price: {{item.price}}</p>
+                <p>Course: {{item.course}}</p>
                 </p>
+                <form action="edit_item/{{item.id}}" method ='post'> 
+                    {%csrf_token%}
+                    <button type="submit">Edit Order</button>
+                </form>
+                {%endfor%}
             </div>
-            <form action="order" method ='post'> 
-                {%csrf_token%}
-                <button type="submit">Order Agin</button>
-            </form>
-            <div class='text-color'>
-                <h2>Previous Orders</h2> 
-                <h3>Ordered On Date</h3>
-                <p class="old-order">
-                    Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. 
-                    Corporis quas officiis temporibus, 
-                </p>
-            </div>
-            <form action="order" method ='post'> 
-                {%csrf_token%}
-                <button type="submit">Order Agin</button>
-            </form>
         </div>
         
         <div class='customer'>
