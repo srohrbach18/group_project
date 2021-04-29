@@ -1,3 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: blue;
+    text-align: center;
+}
+
+.img_bacon {
+    display: inline;
+}
+
+
+/* .welcome_container {
+    width: 970px;
+    margin: 0 auto;
+} */
+
+
 .header-bar{
     display: container;
     width: 80em;
@@ -19,3 +40,27 @@
     margin-left: 15em;
     display: inline-block;
 }
+
+
+footer {
+    color:blue;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 10px;
+}
+
+/* .jumbotron {
+    display: container;
+    width: 80em;
+    height: 2em;
+    box-shadow: 5px 5px 5px;
+    border-radius: 5px;
+
+    
+} */
+
+/* .img{
+    width: 800px;
+    height: auto;
+}  */
+
