@@ -17,6 +17,9 @@
             <div class='bar-item'> <a href="profile">Profile</a></div>
         </div>
 
+        {% for message in messages %}
+            <p class="text-danger small">{{ message }}</p>
+        {% endfor %}
 
         <h1>Add Item </h1>
 
