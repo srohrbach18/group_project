@@ -49,8 +49,8 @@ class User(models.Model):
 class ItemManager(models.Manager):
     def item_validator(self, postData):
         errors = {}
-        n_exists = item.objects.filter(name=postData['name'])
-        d_exists = item.objects.filter(desc=postData['desc'])
+        n_exists = Item.objects.filter(name=postData['name'])
+        d_exists = Item.objects.filter(desc=postData['desc'])
         
 
         if len(postData['name']) <= 0:
@@ -61,9 +61,9 @@ class ItemManager(models.Manager):
             errors['password'] = "please add a price."
         elif postData['course'] <= 0:
             errors['password'] = "Please select a course."
-        elif n_check:
+        elif n_exists:
             errors['name'] = "this name already exists." 
-        elif d_check:
+        elif d_exists:
             errors['desc'] = "this description already exists."
         return errors
 
@@ -75,4 +75,4 @@ class Item(models.Model):
     made_by = models.ManyToManyField(User, related_name="made_items")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
+    objects = ItemManager()

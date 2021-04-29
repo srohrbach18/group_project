@@ -22,21 +22,22 @@ def edit_user (request):
 
 
 def profile(request):
-    user_id = request.session['user_id']
-    user=User.objects.filter(id = user_id)
-    items=Item.objects.all()
-    if user:
-        user = user[0]
-        first_name=user.first_name.capitalize()
-        last_name=user.last_name.capitalize()
-        email=user.email
-    context={
-        'items':items,
-        'email':email,
-        'user':user,
-        'first_name':first_name,
-        'last_name':last_name
-    }
+    if 
+        user_id = request.session['user_id']
+        user=User.objects.filter(id = user_id)
+        items=Item.objects.all()
+        if user:
+            user = user[0]
+            first_name=user.first_name.capitalize()
+            last_name=user.last_name.capitalize()
+            email=user.email
+        context={
+            'items':items,
+            'email':email,
+            'user':user,
+            'first_name':first_name,
+            'last_name':last_name
+        }
 
     return render(request, 'profile.html',context)
 
@@ -45,7 +46,7 @@ def index(request):
 
 def register(request):
     errors = User.objects.register_validator(request.POST)
-
+    
     if len(errors):
         for key, value in errors.items():
             messages.error(request, value)
