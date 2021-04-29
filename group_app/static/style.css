@@ -6,7 +6,7 @@
 * {box-sizing: border-box}
 
 /* Container needed to position the overlay. Adjust the width as needed */
-.food {
+.menufood {
     position: relative;
     width: 50%;
     max-width: 300px;
