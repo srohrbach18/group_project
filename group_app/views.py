@@ -64,18 +64,18 @@ def register(request):
 def login(request):
             return render (request,'log_and_reg.html')
 
-# def login(request):
-#     errors = User.objects.login_validator(request.POST)
+def handle_login(request):
+    errors = User.objects.login_validator(request.POST)
 
-#     if len(errors):
-#         for key, value in errors.items():
-#             messages.error(request, value)
-#             return redirect('/')
-#     else:
-#         user = User.objects.filter(email=request.POST['login_email'])
-#         user=user[0]
-#         request.session['user_id'] = user.id
-#         return redirect('/')
+    if len(errors):
+        for key, value in errors.items():
+            messages.error(request, value)
+            return redirect('/')
+    else:
+        user = User.objects.filter(email=request.POST['login_email'])
+        user=user[0]
+        request.session['user_id'] = user.id
+        return redirect('/')
 
 
 def menu (request):

@@ -5,24 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/welcome.css'%}?{% now 'U' %}">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+
+    <link rel="stylesheet" href="{%static 'css/welcome.css'%}?{%now 'U'%}">
+
 </head>
 
 <body>
-    <div class='container'>
+    <nav class="navbar navbar-primary bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Menu</a>
+            <a class="navbar-brand" href="/contact">Contact</a>
+            <a class="navbar-brand" href="/login">Login</a>
+            <a class="navbar-brand" href="/profile">Profile</a>
+        </div>
+    </nav>
+    <h1>A Fist Full of Bacon</h1>
+    <!-- <div class="welcome_container">
+        <div class="main_image">
+            <img src="/Users/johnsodl84/Desktop/CodingDojo/python_stack/django/group_project/group_app/templates/images/bacon_img.png" alt="bacon">
+        </div> -->
+    <!-- <div class='container'>
+        <img class='img_bacon' src="group_app/templates/images/bacon_img.png" class="img-fluid" alt="Responsive image">
         <div class='header-bar'>
+
+            <div class='bar-item'> <a href="menu">menu</a></div>
+            <div class='bar-item'> <a href="contact">contact</a></div>
+            <div class='bar-item'> <a href="login">login</a></div>
+            <div class='bar-item'> <a href="profile">profile</a></div> -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <div>
+        <footer>Add Food Link</footer>
+    </div>
+    <!-- </div> -->
+
             <div class='bar-item'> <a href="menu">Menu</a></div>
             <div class='bar-item'> <a href="contact">Contact</a></div>
             <div class='bar-item'> <a href="login">Login</a></div>
             <div class='bar-item'> <a href="profile">Profile</a></div>
         </div>
         <h1>Fist Full of Bacon</h1>
+            <div class='img'>
+            
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrsn8ANGI0WmaN3AHUSocNmrc7P2ygOujHXw&usqp=CAU' 
+            alt="" sizes="" srcset="">   
+            </div>
         <!-- bacon images-->
         <!-- make title look cool -->
         <!--add footer link to add food page *update food*  -->
+
 </body>
 
 </html>
+<!-- bacon images-->
+<!-- make title look cool -->
+<!--add footer link to add food page *update food*  -->
