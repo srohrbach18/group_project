@@ -125,23 +125,11 @@ button{
     width: 10em;
     height: 13em; 
 }
-.edit-card{
-    float: right;
-    padding: 9px  15px  2px  1px;
-    width: 10em;
-    height: 10em; 
-}
 .user-info{
 
     float: left;
     padding: 25px 56px 2px 136px;
     width: 10em;
-    height: 10em; 
-}
-.card-info{
-    float: right;
-    margin-left: 1em;
-    width: 6em;
     height: 10em; 
 }
 address{
@@ -184,7 +172,9 @@ address{
 }
 .edit-food{
     text-align: center;
-    margin: auto;
+    margin-top:2em ;
+    height: 7em;
+    background-color: #B9B7A7;
 }
 .title{
     text-align: left;
@@ -220,3 +210,4 @@ address{
 .food-box{
     text-align: center;
 }
+

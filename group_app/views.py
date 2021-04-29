@@ -9,20 +9,27 @@ def contact (request):
     return render(request,'contact.html')
 
 def edit_user (request):
-    user_id = request.session['user_id']
-    user=User.objects.filter(id = user_id)
-    if user:
-        user = user[0]
-    if request.method=='POST':
-            user.first_name=request.POST['first_name'].capitalize()
-            user.last_name=request.POST['last_name'].capitalize()
-            user.email=request.POST['email'] 
-            user.save()
-    return redirect(profile)
+    errors = User.objects.user_validator(request.POST)
+    
+    if len(errors):
+        for key, value in errors.items():
+            messages.error(request, value)
+            return redirect('/profile')
+    else:
+        user_id = request.session['user_id']
+        user=User.objects.filter(id = user_id)
+        if user:
+            user = user[0]
+        if request.method=='POST':
+                user.first_name=request.POST['first_name'].capitalize()
+                user.last_name=request.POST['last_name'].capitalize()
+                user.email=request.POST['email'] 
+                user.save()
+        return redirect(profile)
 
 
 def profile(request):
-    if 
+    
         user_id = request.session['user_id']
         user=User.objects.filter(id = user_id)
         items=Item.objects.all()
@@ -39,7 +46,7 @@ def profile(request):
             'last_name':last_name
         }
 
-    return render(request, 'profile.html',context)
+        return render(request, 'profile.html',context)
 
 def index(request):
     return render (request, "index.html")
@@ -50,7 +57,7 @@ def register(request):
     if len(errors):
         for key, value in errors.items():
             messages.error(request, value)
-        return redirect('/')
+        return redirect('/login')
     else:
         user = User.objects.create(
             first_name=request.POST['first_name'],
@@ -61,7 +68,7 @@ def register(request):
         )
         request.session['user_id'] = user.id
         return redirect('/')
-
+    
 def login(request):
             return render (request,'log_and_reg.html')
 
@@ -71,7 +78,7 @@ def handle_login(request):
     if len(errors):
         for key, value in errors.items():
             messages.error(request, value)
-            return redirect('/')
+            return redirect('/login')
     else:
         user = User.objects.filter(email=request.POST['login_email'])
         user=user[0]
@@ -87,21 +94,29 @@ def menu (request, item_id):
     return render(request, "menu.html", context)
 
 def handle_add_food(request):
-    item=Item.objects.all()
-    user_id = request.session['user_id']
-    user=User.objects.filter(id=user_id)
-    if user:
-        user=user[0]
-    if request.method=='POST':
-        item=Item.objects.create(
-            course=request.POST['course'],
-            name=request.POST['name'].capitalize(),
-            desc=request.POST['desc'].capitalize(),
-            price=request.POST['price'] ,
-            # made_by=user
-            )
-        item.save()
-    return redirect(add_food)
+    errors = Item.objects.item_validator(request.POST)
+    
+    if len(errors):
+        for key, value in errors.items():
+            messages.error(request, value)
+        return redirect('/')
+
+    else:
+        item=Item.objects.all()
+        user_id = request.session['user_id']
+        user=User.objects.filter(id=user_id)
+        if user:
+            user=user[0]
+        if request.method=='POST':
+            item=Item.objects.create(
+                course=request.POST['course'],
+                name=request.POST['name'].capitalize(),
+                desc=request.POST['desc'].capitalize(),
+                price=request.POST['price'] ,
+                # made_by=user
+                )
+            item.save()
+        return redirect(add_food)
     
 def add_food(request):
     items=Item.objects.all()
