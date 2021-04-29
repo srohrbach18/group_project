@@ -19,6 +19,9 @@
         <div class='bar-item'> <a href="profile">Profile</a></div>
     </div>
 
+    {% for message in messages %}
+        <p class="text-danger small">{{ message }}</p>
+        {% endfor %}
 
     <h1 class='title'> Welcome {{first_name}} {{last_name}} </h1>
     <div class='mid-holder'>
@@ -64,12 +67,12 @@
         
         </div>
         <div class='right-col'>
-                <a href="order"><img class='img-t' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPGX_yaEAarjCr_PIzRiaEVlcZ22EiAF1GgA&usqp=CAU" alt="bacon food"></a>
-                <a href="order"><img class='img-m' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7L-I8i4CTfo2mD2blvdXr6Djbo3p0LlSmPw&usqp=CAU' alt="bacon food"></a>
-                <a href="order"><img class ='img-b' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1qXSWhz_vCCYysH2jaU6m7ulbxtrhTCM4_w&usqp=CAU' alt="bacon food"></a>
-                <a href="order"><img class='img-t' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFYiI6YZzuxvO37X-DOr_HyPh0nUGOL1vyFQ&usqp=CAU" alt="bacon food"></a>
-                <a href="order"><img class='img-m' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWnu2N7W0amW7B0H3-rtg5C4-CnyivczcCYw&usqp=CAU' alt="bacon food"></a>
-                <a href="order"><img class ='img-b' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrsn8ANGI0WmaN3AHUSocNmrc7P2ygOujHXw&usqp=CAU' alt="bacon food"></a>
+                <a href="menu"><img class='img-t' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPGX_yaEAarjCr_PIzRiaEVlcZ22EiAF1GgA&usqp=CAU" alt="bacon food"></a>
+                <a href="menu"><img class='img-m' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7L-I8i4CTfo2mD2blvdXr6Djbo3p0LlSmPw&usqp=CAU' alt="bacon food"></a>
+                <a href="menu"><img class ='img-b' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1qXSWhz_vCCYysH2jaU6m7ulbxtrhTCM4_w&usqp=CAU' alt="bacon food"></a>
+                <a href="menu"><img class='img-t' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFYiI6YZzuxvO37X-DOr_HyPh0nUGOL1vyFQ&usqp=CAU" alt="bacon food"></a>
+                <a href="menu"><img class='img-m' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWnu2N7W0amW7B0H3-rtg5C4-CnyivczcCYw&usqp=CAU' alt="bacon food"></a>
+                <a href="menu"><img class ='img-b' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrsn8ANGI0WmaN3AHUSocNmrc7P2ygOujHXw&usqp=CAU' alt="bacon food"></a>
                 
             </div>
     </div>

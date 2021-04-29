@@ -19,6 +19,9 @@
         <div class='bar-item'> <a href="/profile">Profile</a></div>
     </div>
 
+    {% for message in messages %}
+        <p class="text-danger small">{{ message }}</p>
+    {% endfor %}
 
     <h1>Edit item</h1>
     <form class='edit-food' action="/handle_edit_item/{{item.id}}" method='POST'>
