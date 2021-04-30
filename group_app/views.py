@@ -44,9 +44,7 @@ def admin(request):
     user_id = request.session['user_id']
     user=User.objects.filter(id = user_id)
     if user:
-
         user = user[0]
-        
         if request.POST['_admin']=='true':
             user.is_admin = True
             active=user.is_admin = True
@@ -57,9 +55,6 @@ def admin(request):
             user.save()
             print(user.is_admin)
         return redirect(profile)
-
-
-
 
 
 def profile(request):

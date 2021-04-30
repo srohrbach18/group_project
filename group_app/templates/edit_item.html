@@ -18,10 +18,17 @@
             <div class='bar-item'> <a href="menu">Menu</a></div>
             <div class='bar-item'> <a href="contact">Contact</a></div>
             {%if request.session.user_id%}
+<<<<<<< HEAD
                 <div class='bar-item'> <a href="logout">Logout</a></div>
                 {%else%}
                 <div class='bar-item'> <a href="login">Login</a></div>
             {%endif%}
+=======
+            <div class='bar-item'> <a href="logout">Logout</a></div>
+            {%else%}
+            <div class='bar-item'> <a href="login">Login</a></div>
+        {%endif%}
+>>>>>>> 287182fea2d3b81cb258e16751f56cf385d480f0
             <div class='bar-item'> <a href="profile">Profile</a></div>
     </div>
 
