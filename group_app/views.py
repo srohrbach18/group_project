@@ -182,7 +182,15 @@ def edit_item(request,item_id):
     return render(request,'edit_item.html',context) 
 
 def handle_edit_item(request,item_id):
-    if request.method == 'POST':
+    errors = Item.objects.item_validator(request.POST)
+    
+    if len(errors):
+        for key, value in errors.items():
+            messages.error(request, value)
+        return redirect(f'/edit_item/{item_id}')
+    
+    else:
+        request.method == 'POST'
         item=Item.objects.filter(id=item_id)
         if item:
             item=item[0]
@@ -192,6 +200,6 @@ def handle_edit_item(request,item_id):
             item.course = request.POST['course']
             item.save()
 
-    return redirect(f'/edit_item/{item_id}')
+    return redirect(add_food)
 
 
