@@ -20,7 +20,11 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Menu</a>
             <a class="navbar-brand" href="/contact">Contact</a>
-            <a class="navbar-brand" href="/login">Login</a>
+            {%if request.session.user_id%}
+                <div class='bar-item'> <a href="logout">Logout</a></div>
+                {%else%}
+                <div class='bar-item'> <a href="login">Login</a></div>
+            {%endif%}
             <a class="navbar-brand" href="/profile">Profile</a>
         </div>
     </nav>
