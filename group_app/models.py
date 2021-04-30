@@ -7,6 +7,8 @@ EMAIL_REGEX = re.compile(
     '^[_a-z0-9-]+(.[_a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)(.[a-z]{2,4})$')
 
 # Create your models here.
+
+
 class UserManager(models.Manager):
     def register_validator(self, postData):
         errors = {}
@@ -53,6 +55,7 @@ class UserManager(models.Manager):
                 errors['login_email'] = "Email and password do not match."
         return errors
 
+
 class User(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
@@ -62,11 +65,13 @@ class User(models.Model):
     updated_at = models.DateField(auto_now=True)
     objects = UserManager()
 
+
 class ItemManager(models.Manager):
     def item_validator(self, itemData):
         errors = {}
         n_exists = Item.objects.filter(name=itemData['name'])
         d_exists = Item.objects.filter(desc=itemData['desc'])
+
 
         if len(itemData['name']) <= 0:
             errors['name'] = "please add a name"
@@ -77,10 +82,11 @@ class ItemManager(models.Manager):
         elif itemData['course'] <= 0:
             errors['password'] = "Please select a course."
         elif n_exists:
-            errors['name'] = "this name already exists." 
+            errors['name'] = "this name already exists."
         elif d_exists:
             errors['desc'] = "this description already exists."
         return errors
+
 
 class Item(models.Model):
     course = models.CharField(max_length=45)
