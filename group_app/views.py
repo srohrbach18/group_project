@@ -103,7 +103,7 @@ def handle_add_food(request):
     if len(errors):
         for key, value in errors.items():
             messages.error(request, value)
-        return redirect('/')
+        return redirect(add_food)
 
     else:
         item=Item.objects.all()
