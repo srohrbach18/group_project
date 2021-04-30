@@ -23,6 +23,7 @@ class UserManager(models.Manager):
             errors['password'] = "Passwords do not match."
         if len(postData['email']) < 1:
             errors['reg_email'] = "Email address cannot be blank."
+            
         elif not EMAIL_REGEX.match(postData['email']):
             errors['reg_email'] = "Please enter a valid email address."
         elif check:
@@ -30,24 +31,26 @@ class UserManager(models.Manager):
         return errors
 
     def user_validator(self, postData):
-
-        if EMAIL_REGEX.match(postData['email'])!=request.POST['admin@email.com']:
-            request.POST['is_admin']=False
-        elif EMAIL_REGEX.match(postData['email'])==request.POST['admin@email.com']:
-            request.POST['is_admin']=True
-
         errors = {}
-        check = User.objects.filter(email=postData['email'])
+        # check = User.objects.filter(email=postData['email'])
+        # if check:
+        #     logged=check[0]
+        #     if logged.email:
+        #         print('==' + logged.email)
+        #         errors['reg_email'] = f"{logged.first_name} Email address is already registered."
+
+        #     if logged.email != postData['email']:
+        #         print(" != " + logged.email)
+        #         errors['reg_email'] = f"{logged.first_name} Email address is already registered."
+
         if len(postData['first_name']) < 2:
             errors['first_name'] = "First name must be at least 2 characters long."
         if len(postData['last_name']) < 2:
             errors['last_name'] = "Last name must be at least 2 characters long."
-        if len(postData['email']) < 1:
-            errors['reg_email'] = "Email address cannot be blank."
-        elif not EMAIL_REGEX.match(postData['email']):
-            errors['reg_email'] = "Please enter a valid email address."
-        elif check:
-            errors['reg_email'] = "Email address is already registered."
+        # if len(postData['email']) < 1:
+        #     errors['reg_email'] = "Email address cannot be blank."
+        # elif not EMAIL_REGEX.match(postData['email']):
+        #     errors['reg_email'] = "Please enter a valid email address."
         return errors
 
     def login_validator(self, postData):

@@ -14,15 +14,15 @@
 <div class='container'>
     <div class='header-bar'>
         <div class='bar-item'> <a href="/">Home</a></div>
-            <div class='bar-item'> <a href="add_food">Add Food</a></div>
-            <div class='bar-item'> <a href="menu">Menu</a></div>
-            <div class='bar-item'> <a href="contact">Contact</a></div>
+            <div class='bar-item'> <a href="/add_food">Add Food</a></div>
+            <div class='bar-item'> <a href="/menu">Menu</a></div>
+            <div class='bar-item'> <a href="/contact">Contact</a></div>
             {%if request.session.user_id%}
-            <div class='bar-item'> <a href="logout">Logout</a></div>
+            <div class='bar-item'> <a href="/logout">Logout</a></div>
             {%else%}
-            <div class='bar-item'> <a href="login">Login</a></div>
+            <div class='bar-item'> <a href="/login">Login</a></div>
         {%endif%}
-            <div class='bar-item'> <a href="profile">Profile</a></div>
+            <div class='bar-item'> <a href="/profile">Profile</a></div>
     </div>
 
     {% for message in messages %}
