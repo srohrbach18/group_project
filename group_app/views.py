@@ -8,6 +8,10 @@ import bcrypt
 def contact (request):
     return render(request,'contact.html')
 
+def logout(request):
+    request.session.flush()
+    return redirect(login)
+
 def edit_user (request):
     errors = User.objects.user_validator(request.POST)
     
@@ -28,8 +32,40 @@ def edit_user (request):
         return redirect(profile)
 
 
+def delete_food(request, item_id):
+    item=Item.objects.filter(id=item_id)
+    if item:
+        d_item=item[0]
+        d_item.delete()
+    return redirect(add_food)
+
+
+def admin(request):
+    user_id = request.session['user_id']
+    user=User.objects.filter(id = user_id)
+    if user:
+
+        user = user[0]
+        
+        if request.POST['_admin']=='true':
+            user.is_admin = True
+            active=user.is_admin = True
+            user.save()
+        elif request.POST['_admin']=='false':
+            user.is_admin = False
+            active=user.is_admin = False
+            user.save()
+            print(user.is_admin)
+        return redirect(profile)
+
+
+
+
+
 def profile(request):
-    
+    if "user_id" not in request.session:
+        return redirect('/')
+    else:
         user_id = request.session['user_id']
         user=User.objects.filter(id = user_id)
         items=Item.objects.all()
@@ -103,7 +139,7 @@ def handle_add_food(request):
     if len(errors):
         for key, value in errors.items():
             messages.error(request, value)
-        return redirect('/')
+        return redirect(add_food)
 
     else:
         item=Item.objects.all()
@@ -124,8 +160,9 @@ def handle_add_food(request):
     
 def add_food(request):
     items=Item.objects.all()
-
+    
     context={
+        
         "items":items,
     }
 
@@ -134,9 +171,11 @@ def add_food(request):
 def edit_item(request,item_id):
     item=Item.objects.filter(id=item_id)
     if item:
+        
         item=item[0]
 
     context={
+        
         "item":item
     }
     

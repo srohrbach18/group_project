@@ -13,7 +13,11 @@
         <div class='header-bar'>
             <div class='bar-item'> <a href="menu">Menu</a></div>
             <div class='bar-item'> <a href="contact">Contact</a></div>
-            <div class='bar-item'> <a href="login">Login</a></div>
+            {%if request.session.user_id%}
+                <div class='bar-item'> <a href="logout">Logout</a></div>
+                {%else%}
+                <div class='bar-item'> <a href="login">Login</a></div>
+            {%endif%}
             <div class='bar-item'> <a href="profile">Profile</a></div>
         </div>
 
@@ -53,6 +57,15 @@
             {%for item in items%}
             {%if item.course == 'Appetizers' %}
             <a href='edit_item/{{item.id}}'><li>{{item.name}}</li></a>
+                
+            
+            
+                <form action="delete_food/{{item.id}}">
+                    {%csrf_token%}
+                    <button type="submit">Delete</button>
+                </form>
+            
+            <p>----------------------------------------</p>
             {%endif%}
             {%endfor%}
         </div>
@@ -61,6 +74,11 @@
             {%for item in items%}
             {%if item.course == 'Entrees' %}
             <a href='edit_item/{{item.id}}'><li>{{item.name}}</li></a>
+            <form action="delete_food/{{item.id}}">
+                {%csrf_token%}
+                <button type="submit">Delete</button>
+            </form>
+            <p>----------------------------------------</p>
             {%endif%}
             {%endfor%}
         </div>
@@ -70,6 +88,11 @@
             {%for item in items%}
             {%if item.course == 'Desserts' %}
             <a href='edit_item/{{item.id}}'><li>{{item.name}}</li></a>
+            <form action="delete_food/{{item.id}}">
+                {%csrf_token%}
+                <button type="submit">Delete</button>
+            </form>
+            <p>----------------------------------------</p>
             {%endif%}
             {%endfor%}
         </div>

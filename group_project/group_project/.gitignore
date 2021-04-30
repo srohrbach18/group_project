@@ -163,4 +163,6 @@ __pycache__/
 venv/
 db.sqlite3
 style.css
+
 >>>>>>> stephan
+db.sqlite3

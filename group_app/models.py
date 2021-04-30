@@ -28,9 +28,14 @@ class UserManager(models.Manager):
         return errors
 
     def user_validator(self, postData):
+
+        if EMAIL_REGEX.match(postData['email'])!=request.POST['admin@email.com']:
+            request.POST['is_admin']=False
+        elif EMAIL_REGEX.match(postData['email'])==request.POST['admin@email.com']:
+            request.POST['is_admin']=True
+
         errors = {}
         check = User.objects.filter(email=postData['email'])
-        
         if len(postData['first_name']) < 2:
             errors['first_name'] = "First name must be at least 2 characters long."
         if len(postData['last_name']) < 2:
@@ -60,6 +65,7 @@ class User(models.Model):
     password = models.CharField(max_length=255)
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
+    is_admin = models.BooleanField(default=False)
     objects = UserManager()
 
 class ItemManager(models.Manager):
@@ -74,8 +80,6 @@ class ItemManager(models.Manager):
             errors['desc'] = "please add a description."
         if len(itemData['price']) <= 0:
             errors['password'] = "please add a price."
-        elif itemData['course'] <= 0:
-            errors['password'] = "Please select a course."
         elif n_exists:
             errors['name'] = "this name already exists." 
         elif d_exists:
