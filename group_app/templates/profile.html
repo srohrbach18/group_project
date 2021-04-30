@@ -26,19 +26,15 @@
             {%endif%}
         <div class='bar-item'> <a href="profile">Profile</a></div>
 
-        {%if request.session.user_id == 2%}
+    {%if request.session.user_id == 2%}
         <form action="admin" method='POST'>
             {%csrf_token%}
             <label class='bar-item' for="_admin">Admin</label>
             <select name="_admin" id="_admin" method='POST'>
-
                 <option name= "{{user.is_admin}}" value="{{user.is_admin}}">{{user.is_admin}}</option>
-
                 <option name="admin" value="true">Admin</option>
-                <option name= "user" value="false">User</option>
-                
-            </select>
-            
+                <option name= "user" value="false">User</option>               
+            </select>            
             <button type="submit">confirm</button>
         </form>
     {%endif%}
