@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header-bar{
+    display: container;
+    width: 70em;
+    height: 2em;
+    margin: auto;
+    background-color: gray;
+    box-shadow: 5px 5px 5px;
+    border-radius: 5px;
+    text-align: center;
+    
+}
+.bar-item a
+{
+    background-color: gray;
+    color: purple;
+
+}
+.bar-item{
+    
+    margin-top:.33em;
+    margin-left: 10em;
+    display: inline-block;
+}
