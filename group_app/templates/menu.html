@@ -16,6 +16,7 @@
 <body>
     <div class="container">
         <div class='header-bar'>
+            <div class='bar-item'> <a href="/">Home</a></div>
             <div class='bar-item'> <a href="add_food">Add Food</a></div>
             <div class='bar-item'> <a href="menu">Menu</a></div>
             <div class='bar-item'> <a href="contact">Contact</a></div>
@@ -35,7 +36,9 @@
                 {% for item in items %}
                     {% if item.course == "Appetizers" %}
                         <tr>
-                            <h2><td>{{ item.name }} - {{ item.desc }} - ${{ item.price }}</td></h2>
+                            <div class="foodcont">
+                                <h3><td>{{ item.name }} - {{ item.desc }} - ${{ item.price }}</td></h3>
+                            </div>
                         </tr>
                     {% endif %}
                 {% endfor %}
@@ -47,7 +50,9 @@
                 {% for item in items %}
                     {% if item.course == "Entrees" %}
                         <tr>
-                            <h2><td>{{ item.name }} - {{ item.desc }} - ${{ item.price }}</td></h2>
+                            <div class="foodcont">
+                                <h3><td>{{ item.name }} - {{ item.desc }} - ${{ item.price }}</td></h3>
+                            </div>
                         </tr>
                     {% endif %}
                 {% endfor %}
@@ -59,7 +64,9 @@
                 {% for item in items %}
                     {% if item.course == "Desserts" %}
                         <tr>
-                            <h2><td>{{ item.name }} - {{ item.desc }} - ${{ item.price }}</td></h2>
+                            <div class="foodcont">
+                                <h3><td>{{ item.name }} - {{ item.desc }} - ${{ item.price }}</td></h3>
+                            </div>
                         </tr>
                     {% endif %}
                 {% endfor %}

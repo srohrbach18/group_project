@@ -12,7 +12,12 @@
     max-width: 300px;
 }
 
-.menufood h2{
+.foodcont {
+    width: 10em;
+    max-height: 3em;
+}
+
+.menufood h3{
     position: relative;
     width: 40em;
     height: 2em;
