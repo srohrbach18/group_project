@@ -6,10 +6,22 @@
 * {box-sizing: border-box}
 
 /* Container needed to position the overlay. Adjust the width as needed */
-.food {
+.menufood {
     position: relative;
     width: 50%;
     max-width: 300px;
+}
+
+.foodcont {
+    width: 10em;
+    max-height: 3em;
+}
+
+.menufood h3{
+    position: relative;
+    width: 40em;
+    height: 2em;
+    text-align: left;
 }
 
 /* Make the image to responsive */

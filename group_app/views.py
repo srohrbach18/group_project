@@ -82,8 +82,9 @@ def menu (request):
     if "user_id" not in request.session:
         return redirect('/')
     else:
+        items=Item.objects.all()
         context = {
-            'all_items': Item.objects.all(),
+            'items': items,
             'this_user': User.objects.get(id=request.session['user_id']),
         }
     return render(request, "menu.html", context) 
