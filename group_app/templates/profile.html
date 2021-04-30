@@ -26,23 +26,22 @@
             {%endif%}
         <div class='bar-item'> <a href="profile">Profile</a></div>
 
-
+        {%if request.session.user_id == 2%}
         <form action="admin" method='POST'>
             {%csrf_token%}
             <label class='bar-item' for="_admin">Admin</label>
             <select name="_admin" id="_admin" method='POST'>
 
-                <option name="admin" value=""></option>
-                
-                <option name="admin" value="true">admin</option>
-                
-                <option name= "user" value="false">user</option>
+                <option name= "{{user.is_admin}}" value="{{user.is_admin}}">{{user.is_admin}}</option>
+
+                <option name="admin" value="true">Admin</option>
+                <option name= "user" value="false">User</option>
                 
             </select>
+            
             <button type="submit">confirm</button>
         </form>
-        {{user.is_admin}}
-
+    {%endif%}
     </div>
 
     {% for message in messages %}
@@ -82,13 +81,13 @@
                 {%csrf_token%}
                 <div class='user-info'>
                 <label for="first_name">First Name</label>
-                <input type="text" name='first_name'id='first_name' placeholder="{{first_name}}">
+                <input type="text" name='first_name'id='first_name' value="{{first_name}}">
 
                 <label for="last_name">Last Name</label>
-                <input type="text" name='last_name'id='last_name' placeholder="{{last_name}}">
-
+                <input type="text" name='last_name'id='last_name' value="{{last_name}}">
+<!-- 
                 <label for="email">Email</label>
-                <input type="text" name='email'id='email' placeholder="{{email}}">
+                <input type="text" name='email'id='email' value="{{email}}"> -->
 
                 <button id ='btn' name='edit_user' type="submit">Edit Personal</button>
                 </div>

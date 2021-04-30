@@ -21,13 +21,14 @@ def edit_user (request):
             return redirect('/profile')
     else:
         user_id = request.session['user_id']
+        
         user=User.objects.filter(id = user_id)
         if user:
             user = user[0]
         if request.method=='POST':
                 user.first_name=request.POST['first_name'].capitalize()
                 user.last_name=request.POST['last_name'].capitalize()
-                user.email=request.POST['email'] 
+                # user.email=request.POST['email'] 
                 user.save()
         return redirect(profile)
 
@@ -49,6 +50,7 @@ def admin(request):
             user.is_admin = True
             active=user.is_admin = True
             user.save()
+            print(user.is_admin)
         elif request.POST['_admin']=='false':
             user.is_admin = False
             active=user.is_admin = False
@@ -68,10 +70,10 @@ def profile(request):
             user = user[0]
             first_name=user.first_name.capitalize()
             last_name=user.last_name.capitalize()
-            email=user.email
+            # email=user.email
         context={
             'items':items,
-            'email':email,
+            # 'email':email,
             'user':user,
             'first_name':first_name,
             'last_name':last_name
@@ -126,7 +128,7 @@ def menu (request):
             'items': items,
             'this_user': User.objects.get(id=request.session['user_id']),
         }
-    return render(request, "menu.html", context) 
+        return render(request, "menu.html", context) 
 
 def handle_add_food(request):
     errors = Item.objects.item_validator(request.POST)
