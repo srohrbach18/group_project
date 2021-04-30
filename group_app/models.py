@@ -72,19 +72,12 @@ class ItemManager(models.Manager):
         n_exists = Item.objects.filter(name=itemData['name'])
         d_exists = Item.objects.filter(desc=itemData['desc'])
 
-
         if len(itemData['name']) <= 0:
             errors['name'] = "please add a name"
         if len(itemData['desc']) <= 0:
             errors['desc'] = "please add a description."
         if len(itemData['price']) <= 0:
-            errors['password'] = "please add a price."
-        elif itemData['course'] <= 0:
-            errors['password'] = "Please select a course."
-        elif n_exists:
-            errors['name'] = "this name already exists."
-        elif d_exists:
-            errors['desc'] = "this description already exists."
+            errors['price'] = "please add a price."
         return errors
 
 
