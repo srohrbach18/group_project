@@ -13,6 +13,7 @@
 
 <div class ='container'>
     <div class='header-bar'>
+        <div class='bar-item'> <a href="/">Home</a></div>
         <div class='bar-item'> <a href="menu">Menu</a></div>
         <div class='bar-item'> <a href="contact">Contact</a></div>
         {%if request.session.user_id%}
@@ -51,10 +52,7 @@
                     <p>847 S. Bacon Blvd <br> Eureka, NV 89316<p>
                     
                 </address>
-                <form action="order" >
-                    <button class='btn' type='submit' name='order-btn'> Order Now</button>
-                    
-                </form>
+            
             </div>
     </div>
 

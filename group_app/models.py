@@ -83,15 +83,7 @@ class ItemManager(models.Manager):
         if len(itemData['desc']) <= 0:
             errors['desc'] = "please add a description."
         if len(itemData['price']) <= 0:
-<<<<<<< HEAD
-            errors['password'] = "please add a price."
-        elif n_exists:
-            errors['name'] = "this name already exists." 
-        elif d_exists:
-            errors['desc'] = "this description already exists."
-=======
             errors['price'] = "please add a price."
->>>>>>> d95e6f0df72692442bc47378a67a46fdca6c9ff3
         return errors
 
 
