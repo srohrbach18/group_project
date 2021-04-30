@@ -7,6 +7,8 @@ EMAIL_REGEX = re.compile(
     '^[_a-z0-9-]+(.[_a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)(.[a-z]{2,4})$')
 
 # Create your models here.
+
+
 class UserManager(models.Manager):
     def register_validator(self, postData):
         errors = {}
@@ -27,6 +29,22 @@ class UserManager(models.Manager):
             errors['reg_email'] = "Email address is already registered."
         return errors
 
+    def user_validator(self, postData):
+        errors = {}
+        check = User.objects.filter(email=postData['email'])
+        
+        if len(postData['first_name']) < 2:
+            errors['first_name'] = "First name must be at least 2 characters long."
+        if len(postData['last_name']) < 2:
+            errors['last_name'] = "Last name must be at least 2 characters long."
+        if len(postData['email']) < 1:
+            errors['reg_email'] = "Email address cannot be blank."
+        elif not EMAIL_REGEX.match(postData['email']):
+            errors['reg_email'] = "Please enter a valid email address."
+        elif check:
+            errors['reg_email'] = "Email address is already registered."
+        return errors
+
     def login_validator(self, postData):
         errors = {}
         check = User.objects.filter(email=postData['login_email'])
@@ -37,6 +55,7 @@ class UserManager(models.Manager):
                 errors['login_email'] = "Email and password do not match."
         return errors
 
+
 class User(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
@@ -46,26 +65,28 @@ class User(models.Model):
     updated_at = models.DateField(auto_now=True)
     objects = UserManager()
 
-class ItemManager(models.Manager):
-    def item_validator(self, postData):
-        errors = {}
-        n_exists = item.objects.filter(name=postData['name'])
-        d_exists = item.objects.filter(desc=postData['desc'])
-        
 
-        if len(postData['name']) <= 0:
+class ItemManager(models.Manager):
+    def item_validator(self, itemData):
+        errors = {}
+        n_exists = Item.objects.filter(name=itemData['name'])
+        d_exists = Item.objects.filter(desc=itemData['desc'])
+
+
+        if len(itemData['name']) <= 0:
             errors['name'] = "please add a name"
-        if len(postData['desc']) <= 0:
+        if len(itemData['desc']) <= 0:
             errors['desc'] = "please add a description."
-        if len(postData['price']) <= 0:
+        if len(itemData['price']) <= 0:
             errors['password'] = "please add a price."
-        elif postData['course'] <= 0:
+        elif itemData['course'] <= 0:
             errors['password'] = "Please select a course."
-        elif n_check:
-            errors['name'] = "this name already exists." 
-        elif d_check:
+        elif n_exists:
+            errors['name'] = "this name already exists."
+        elif d_exists:
             errors['desc'] = "this description already exists."
         return errors
+
 
 class Item(models.Model):
     course = models.CharField(max_length=45)
@@ -75,4 +96,4 @@ class Item(models.Model):
     made_by = models.ManyToManyField(User, related_name="made_items")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
+    objects = ItemManager()
